@@ -1,0 +1,258 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TapMinutes — Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ 
+    :root {
+      --ink: #0f0e0d;
+      --paper: #f5f2ed;
+      --accent: #1a56db;
+      --muted: #6b6560;
+      --rule: rgba(15,14,13,0.12);
+      --card: #ffffff;
+    }
+ 
+    html { scroll-behavior: smooth; }
+ 
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.65;
+    }
+ 
+    /* ── Header ── */
+    header {
+      padding: 3rem 2rem 2.5rem;
+      max-width: 680px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--rule);
+    }
+ 
+    .wordmark {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+ 
+    .wordmark span {
+      font-style: italic;
+      color: var(--accent);
+    }
+ 
+    .tagline {
+      margin-top: 0.35rem;
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+ 
+    /* ── Main ── */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+ 
+    /* ── Contact ── */
+    .contact-block {
+      margin: 3rem 0;
+      padding: 2rem 2.25rem;
+      background: var(--card);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+    }
+ 
+    .contact-block h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 0.75rem;
+    }
+ 
+    .contact-block p {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+ 
+    .contact-block a {
+      display: inline-block;
+      background: var(--ink);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.6rem 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      border-radius: 3px;
+      transition: background 0.15s;
+    }
+ 
+    .contact-block a:hover { background: var(--accent); }
+ 
+    /* ── FAQ ── */
+    .faq-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin: 3rem 0 1.5rem;
+    }
+ 
+    details {
+      border-top: 1px solid var(--rule);
+      padding: 1.1rem 0;
+    }
+ 
+    details:last-of-type { border-bottom: 1px solid var(--rule); }
+ 
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+    }
+ 
+    summary::-webkit-details-marker { display: none; }
+ 
+    summary::after {
+      content: '+';
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+ 
+    details[open] summary::after {
+      content: '−';
+    }
+ 
+    .answer {
+      margin-top: 0.85rem;
+      font-size: 0.9375rem;
+      color: var(--muted);
+      padding-right: 1.5rem;
+    }
+ 
+    .answer a { color: var(--accent); }
+ 
+    /* ── Footer ── */
+    footer {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 3rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.8125rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+ 
+    @media (max-width: 480px) {
+      header, main, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+ 
+<header>
+  <div class="wordmark">Tap<span>Minutes</span></div>
+  <p class="tagline">Meeting recorder &amp; AI minutes — Support</p>
+</header>
+ 
+<main>
+ 
+  <div class="contact-block">
+    <h2>Get in touch</h2>
+    <p>Have a bug to report, a feature idea, or just need help? Send an email and we'll get back to you within 1–2 business days.</p>
+    <!-- ✏️  Replace the address below with your real support email -->
+    <a href="mailto:support@tapminutes.app">support@tapminutes.app</a>
+  </div>
+ 
+  <h2 class="faq-heading">Frequently asked questions</h2>
+ 
+  <details>
+    <summary>What does TapMinutes do?</summary>
+    <p class="answer">
+      TapMinutes records your meetings and uses on-device AI to produce clean, structured minutes in seconds — including summaries, action items, decisions, and key points. Everything stays private on your device until you choose to share it.
+    </p>
+  </details>
+ 
+  <details>
+    <summary>Do my recordings leave my device?</summary>
+    <p class="answer">
+      Live captions and transcription run entirely on-device using Apple's speech frameworks. Audio is never uploaded to any server. You can export minutes as a PDF or text file whenever you're ready.
+    </p>
+  </details>
+ 
+  <details>
+    <summary>Which iOS version is required?</summary>
+    <p class="answer">
+      TapMinutes requires iOS 17 or later. On-device live captions require a device with an A17 Pro chip or newer (iPhone 15 Pro and above).
+    </p>
+  </details>
+ 
+  <details>
+    <summary>Can I import an existing audio or video file?</summary>
+    <p class="answer">
+      Yes. Tap the import button on the home screen and choose a file from Files, iCloud Drive, or any share sheet. TapMinutes will transcribe and generate minutes without needing to re-record.
+    </p>
+  </details>
+ 
+  <details>
+    <summary>How do custom presets work?</summary>
+    <p class="answer">
+      Presets let you choose how minutes are styled — executive summary, action-focused, detailed notes, and more. You can also create your own preset with a custom prompt. Presets are applied per-recording and can be changed at any time; regenerating minutes from the transcript is instant.
+    </p>
+  </details>
+ 
+  <details>
+    <summary>What is PDF export?</summary>
+    <p class="answer">
+      After minutes are generated, tap <em>Export → PDF</em> to produce a polished, shareable document. The layout includes the meeting title, date, attendees (if entered), and all structured sections.
+    </p>
+  </details>
+ 
+  <details>
+    <summary>How do I use Siri shortcuts with TapMinutes?</summary>
+    <p class="answer">
+      Open the Shortcuts app, search for TapMinutes actions, and add them to any shortcut or automation. You can start a recording, stop it, and export minutes — all hands-free.
+    </p>
+  </details>
+ 
+  <details>
+    <summary>Something is broken — what should I do?</summary>
+    <p class="answer">
+      First try force-quitting and relaunching the app. If the problem persists, email us at <a href="mailto:support@tapminutes.app">support@tapminutes.app</a> with your device model, iOS version, and a brief description of what happened. Screenshots are always helpful.
+    </p>
+  </details>
+ 
+</main>
+ 
+<footer>
+  <span>© 2025 TapMinutes</span>
+  <!-- ✏️  Add a Privacy Policy link once you have one -->
+  <span><a href="mailto:support@tapminutes.app" style="color:inherit;">support@tapminutes.app</a></span>
+</footer>
+ 
+</body>
+</html>
