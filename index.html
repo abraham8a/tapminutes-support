@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TapMinutes — Support</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #000000;
+      --surface: #1c1c1e;
+      --surface2: #2c2c2e;
+      --fg: #f5f5f7;
+      --muted: #a1a1a6;
+      --accent: #fa4f59;
+      --accent2: #db1a33;
+      --rule: rgba(255,255,255,0.08);
+      --glass: rgba(255,255,255,0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 3rem 2rem 2.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--rule);
+      text-align: center;
+    }
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .logo svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .wordmark {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--accent), #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .tagline {
+      margin-top: 0.35rem;
+      font-size: 0.9375rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 2rem 5rem;
+    }
+
+    /* ── Contact ── */
+    .contact-block {
+      margin: 3rem 0;
+      padding: 2rem 2.25rem;
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 16px;
+    }
+
+    .contact-block h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-block p {
+      font-size: 0.9375rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-block a {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      text-decoration: none;
+      padding: 0.65rem 1.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      border-radius: 40px;
+      transition: opacity 0.15s;
+    }
+
+    .contact-block a:hover { opacity: 0.85; }
+
+    /* ── Feature Highlights ── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 12px;
+      margin: 2rem 0;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--rule);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+
+    .feature-card .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .feature-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-card p {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── FAQ ── */
+    .faq-heading {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 3rem 0 0.25rem;
+    }
+
+    .faq-sub {
+      font-size: 0.875rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    details {
+      border-top: 1px solid var(--rule);
+      padding: 1.1rem 0;
+    }
+
+    details:last-of-type { border-bottom: 1px solid var(--rule); }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      user-select: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      content: '+';
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    details[open] summary::after {
+      content: '−';
+    }
+
+    .answer {
+      margin-top: 0.85rem;
+      font-size: 0.9375rem;
+      color: var(--muted);
+      padding-right: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .answer strong {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .answer a { color: var(--accent); }
+
+    .answer ul {
+      margin: 0.5rem 0;
+      padding-left: 1.25rem;
+    }
+
+    .answer li {
+      margin: 0.3rem 0;
+    }
+
+    /* ── Badge ── */
+    .badge {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 40px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-pro {
+      background: linear-gradient(135deg, #6366f1, #3b82f6);
+      color: #fff;
+    }
+
+    .badge-free {
+      background: var(--surface2);
+      color: var(--muted);
+    }
+
+    .badge-new {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* ── Version Bar ── */
+    .version-bar {
+      text-align: center;
+      padding: 1rem 2rem;
+      font-size: 0.8125rem;
+      color: var(--muted);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── Footer ── */
+    footer {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 3rem;
+      border-top: 1px solid var(--rule);
+      font-size: 0.8125rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: var(--rule);
+    }
+
+    footer a:hover { color: var(--fg); }
+
+    @media (max-width: 480px) {
+      header, main, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+      footer { flex-direction: column; }
+      .features-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+      <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+      <line x1="12" y1="19" x2="12" y2="23" />
+      <line x1="8" y1="23" x2="16" y2="23" />
+    </svg>
+  </div>
+  <div class="wordmark">TapMinutes</div>
+  <p class="tagline">Meeting recorder &amp; AI minutes — Support</p>
+</header>
+
+<div class="version-bar">Version 1.2 — Updated June 2026</div>
+
+<main>
+
+  <!-- Contact -->
+  <div class="contact-block">
+    <h2>Get in touch</h2>
+    <p>Have a bug to report, a feature idea, or just need help? Send an email and we'll get back to you within 1–2 business days.</p>
+    <a href="mailto:support@tapminutes.app">Email Support</a>
+  </div>
+
+  <!-- Features -->
+  <h2 class="faq-heading">What's in TapMinutes</h2>
+  <p class="faq-sub">Everything the app can do at a glance</p>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="icon">🎤</span>
+      <h3>Audio Recording</h3>
+      <p>Record meetings with pause/resume, live captions, and a beautiful animated orb visualizer.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🤖</span>
+      <h3>AI Minutes &amp; Notes</h3>
+      <p>Structured minutes with summaries, action items, decisions, and key points — plus detailed notes mode.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🎨</span>
+      <h3>Presets &amp; Styles</h3>
+      <p>Choose from Professional, Concise, Action-Focused, Client-Friendly, or create your own custom preset.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">📂</span>
+      <h3>Import Files</h3>
+      <p>Import audio, video, PDF, or text files from Files, iCloud Drive, or any share sheet.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">📝</span>
+      <h3>Live Captions</h3>
+      <p>On-device real-time captions while you record. No data ever leaves your device.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">📄</span>
+      <h3>PDF Export <span class="badge badge-pro">Pro</span></h3>
+      <p>Export polished, shareable PDFs. Add your own logo and company name with custom branding.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🔍</span>
+      <h3>Search &amp; Organize</h3>
+      <p>Browse, search, filter by folder or tag, and sort your meeting history with trash/restore.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🔮</span>
+      <h3>Live Activity</h3>
+      <p>See your recording timer on the Lock Screen and Dynamic Island in real time.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🧩</span>
+      <h3>Siri Shortcuts</h3>
+      <p>"Start a recording" and "Open history" shortcuts for hands-free operation.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">📤</span>
+      <h3>Share Extension</h3>
+      <p>Send audio files straight from other apps into TapMinutes for instant processing.</p>
+    </div>
+    <div class="feature-card">
+      <span class="icon">🔄</span>
+      <h3>Regenerate</h3>
+      <p>Rewrite minutes or notes with a different style — undo anytime. Full transcript preserved.</p>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2 class="faq-heading">Frequently asked questions</h2>
+  <p class="faq-sub">Everything you need to know about TapMinutes</p>
+
+  <details>
+    <summary>What does TapMinutes do?</summary>
+    <div class="answer">
+      TapMinutes records your meetings and uses AI to produce clean, structured minutes in seconds — including summaries, action items, decisions, and key points. You can also generate <strong>detailed notes</strong> that are more thorough than standard minutes. Choose from multiple output styles, or create your own custom preset. Everything stays private on your device until you choose to share it.
+    </div>
+  </details>
+
+  <details>
+    <summary>What output modes are available?</summary>
+    <div class="answer">
+      At recording time you can pick between:
+      <ul>
+        <li><strong>Minutes</strong> — structured meeting minutes with sections</li>
+        <li><strong>Notes</strong> — detailed notes, more thorough than minutes</li>
+        <li><strong>Both</strong> — generates minutes and notes simultaneously</li>
+      </ul>
+      After the fact you can <strong>regenerate</strong> either output with a different style (Professional, Concise, Action-Focused, Client-Friendly, or a custom preset) without re-recording.
+    </div>
+  </details>
+
+  <details>
+    <summary>How do recording and transcription work?</summary>
+    <div class="answer">
+      Tap the red record button to start. While recording, <strong>live captions</strong> appear on screen using Apple's on-device Speech framework — no data leaves your device. When you stop, the audio is processed:
+
+      <ul>
+        <li><strong>Pro users:</strong> Cloud transcription via Whisper (OpenAI) for higher accuracy in noisy rooms, accents, and jargon.</li>
+        <li><strong>Free tier:</strong> On-device file transcription (iOS 26+ with A17 Pro chip) for live recordings, or cloud transcription with a daily cap.</li>
+      </ul>
+
+      After transcription, AI generates your structured minutes and/or notes based on your selected style preset.
+    </div>
+  </details>
+
+  <details>
+    <summary>Do my recordings leave my device?</summary>
+    <div class="answer">
+      <strong>Live captions</strong> run entirely on-device using Apple's speech frameworks — they never leave your device.<br><br>
+      When you <strong>stop recording</strong>, the audio file is sent to our server for transcription and AI minute generation. Audio is processed in real time and is <strong>not retained</strong> on our servers after processing. We do not use your data to train AI models.<br><br>
+      You can export minutes as a PDF or text file whenever you're ready.
+    </div>
+  </details>
+
+  <details>
+    <summary>Which iOS version is required?</summary>
+    <div class="answer">
+      TapMinutes requires <strong>iOS 17 or later</strong>. On-device live captions require iOS 17+. On-device file transcription (for imported or recovered recordings on the free tier) requires <strong>iOS 26</strong> with an <strong>A17 Pro chip or newer</strong> (iPhone 15 Pro and above).
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I import existing audio, video, PDF, or text files?</summary>
+    <div class="answer">
+      Yes. Tap the import button on the home screen and choose a file from Files, iCloud Drive, or any share sheet. TapMinutes supports:
+      <ul>
+        <li><strong>Audio:</strong> m4a, mp3, wav, caf, and more</li>
+        <li><strong>Video:</strong> mov, mp4, m4v — audio track is extracted automatically</li>
+        <li><strong>Documents:</strong> PDF and plain text (.txt) files</li>
+      </ul>
+      Imported files are transcribed and minutes are generated without needing to re-record. Video files with no compatible audio track will be rejected with a clear error message.
+    </div>
+  </details>
+
+  <details>
+    <summary>How do custom presets work?</summary>
+    <div class="answer">
+      Presets let you choose how your minutes are styled. Built-in options include <strong>Executive-Style, Concise, Action-Focused, and Client-Friendly</strong>. You can also create your own custom preset with a personalized prompt that tells the AI exactly how you want your minutes written.<br><br>
+      Presets are applied per-recording and can be changed at any time. You can regenerate minutes from the transcript with a different style instantly — the previous version is saved so you can undo. <span class="badge badge-pro">Pro</span> users can create and save unlimited custom presets.
+    </div>
+  </details>
+
+  <details>
+    <summary>How does PDF export work?</summary>
+    <div class="answer">
+      After minutes are generated, tap the share button and choose <strong>Export PDF</strong>. The layout includes the meeting title, date, and all structured sections. <span class="badge badge-pro">Pro</span> users can also:
+      <ul>
+        <li>Customize the PDF header with their <strong>company name and logo</strong></li>
+        <li>Export <strong>notes</strong> as a separate PDF</li>
+      </ul>
+      The PDF is generated locally and can be shared via the system share sheet.
+    </div>
+  </details>
+
+  <details>
+    <summary>How does the free tier compare to Pro?</summary>
+    <div class="answer">
+      <strong>Free tier</strong> includes:
+      <ul>
+        <li>Audio recording (30-minute cap per session)</li>
+        <li>On-device live captions</li>
+        <li>On-device file transcription (iOS 26+ with A17 Pro)</li>
+        <li>Cloud transcription with daily cap (~60 min/day)</li>
+        <li>Basic PDF export</li>
+        <li>Preset styles</li>
+      </ul>
+      <strong>Pro</strong> (Monthly $7.99 / Yearly $59.99) adds:
+      <ul>
+        <li>Unlimited recording length</li>
+        <li>Premium cloud transcription (Whisper) with 10x daily cap</li>
+        <li>iCloud sync across devices</li>
+        <li>PDF with custom branding (logo + company name)</li>
+        <li>Unlimited regeneration of minutes</li>
+        <li>Custom preset creation</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>How do I use Siri shortcuts with TapMinutes?</summary>
+    <div class="answer">
+      Open the <strong>Shortcuts</strong> app, search for TapMinutes actions, and add them to any shortcut or automation:
+      <ul>
+        <li><strong>Start Recording</strong> — begins a new meeting recording</li>
+        <li><strong>Open History</strong> — opens the meeting history screen</li>
+      </ul>
+      You can also trigger these from Siri by saying things like "Start a meeting with TapMinutes" or "Open my TapMinutes history."
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I organize my meetings with folders and tags?</summary>
+    <div class="answer">
+      Yes. TapMinutes supports:
+      <ul>
+        <li><strong>Folders</strong> — create custom folders to organize meetings. Move meetings between folders from the history list.</li>
+        <li><strong>Tags</strong> — add tags to any meeting. The app suggests relevant tags based on your content. Filter by tag in the history view.</li>
+        <li><strong>Search</strong> — search across meeting titles, transcripts, minutes, notes, and tags.</li>
+        <li><strong>Trash</strong> — deleted meetings go to trash and auto-purge after 30 days. Restore anytime within that window.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>What is the Live Activity / Dynamic Island feature?</summary>
+    <div class="answer">
+      While recording, TapMinutes shows a <strong>Live Activity</strong> on your iPhone's Lock Screen and <strong>Dynamic Island</strong> (on supported devices). You can see the recording timer at a glance without opening the app.<br><br>
+      The Live Activity ends automatically when you stop recording. Requires iOS 16.2 or later.
+    </div>
+  </details>
+
+  <details>
+    <summary>Can I share audio files directly into TapMinutes?</summary>
+    <div class="answer">
+      Yes. The <strong>Share Extension</strong> lets you send audio recordings from other apps (Voice Memos, WhatsApp, your file browser, etc.) straight into TapMinutes. Just tap the share button and choose TapMinutes from the share sheet. The file will be imported and processed automatically.
+    </div>
+  </details>
+
+  <details>
+    <summary>What happens if my recording is interrupted?</summary>
+    <div class="answer">
+      TapMinutes has a <strong>Recovery System</strong>:
+      <ul>
+        <li><strong>Auto-recovery:</strong> If the app force-quits mid-recording, it detects the unfinished audio chunks on next launch and offers to <strong>continue recording</strong> or <strong>finish and transcribe</strong>.</li>
+        <li><strong>Manual recovery:</strong> If a finalized audio file exists without a matching meeting record, the app surfaces a "Recover lost recordings" option on the home screen. You can choose the language and output mode before reprocessing.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Is audio playback synchronized with the transcript?</summary>
+    <div class="answer">
+      Yes. In the meeting detail view, you can play back the audio with a <strong>synchronized transcript</strong> that highlights each word as it's spoken. Tap any segment to jump to that point in the recording. The display can show minutes, notes, transcript, or both simultaneously.
+    </div>
+  </details>
+
+  <details>
+    <summary>Something is broken — what should I do?</summary>
+    <div class="answer">
+      First try force-quitting and relaunching the app. If the problem persists, email us at <a href="mailto:support@tapminutes.app">support@tapminutes.app</a> with your device model, iOS version, and a brief description of what happened. Screenshots are always helpful.
+    </div>
+  </details>
+
+</main>
+
+<footer>
+  <span>&copy; 2026 TapMinutes</span>
+  <span><a href="/privacy">Privacy Policy</a> &middot; <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Terms of Service</a></span>
+  <span><a href="mailto:support@tapminutes.app">support@tapminutes.app</a></span>
+</footer>
+
+</body>
+</html>
