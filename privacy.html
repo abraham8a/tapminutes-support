@@ -1,16 +1,68 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TapMinutes Privacy Policy</title><meta name="description" content="How TapMinutes handles recordings, transcripts, meeting minutes, notes, and iCloud data."><link rel="icon" href="favicon.png"><link rel="stylesheet" href="styles.css"></head>
-<body><header class="site-header"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="/"><img src="assets/tapminutes-logo.png" alt=""><span>TapMinutes</span></a><div class="nav-links"><a href="help.html">Help</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Terms</a><a href="mailto:support@tapminutes.app">Support</a></div></nav></header>
-<main class="legal"><a class="back" href="/">&larr; Back to TapMinutes</a><h1>Privacy Policy</h1><span class="updated">Last updated: September 17, 2026</span>
-<p>TapMinutes is a meeting-recording app that turns live recordings and imported media into transcripts, structured minutes, and detailed notes. We designed it to collect as little personal information as possible. This policy explains what is processed and why.</p>
-<h2>Who we are</h2><p>TapMinutes is operated by Abraham Ochoa. Contact us at <a href="mailto:support@tapminutes.app">support@tapminutes.app</a>.</p>
-<h2>Information processed</h2><p>When you request online transcription or AI-generated minutes or notes, TapMinutes may process:</p><ul><li><strong>Audio recordings.</strong> Audio from a recording or supported imported audio or video file is sent for transcription.</li><li><strong>Transcripts and instructions.</strong> Transcribed text and any style instructions are processed to generate minutes or notes.</li><li><strong>Anonymous device identifier.</strong> A random identifier generated on your device helps enforce usage limits and prevent abuse. It is not linked to your name, email address, or Apple Account.</li></ul><p>TapMinutes does not collect your name, email address, contacts, location, health data, financial information, advertising identifiers, or analytics.</p>
-<h2>How information is used</h2><p>Audio, transcripts, and instructions are used only to provide the transcription, minutes, notes, regeneration, and related features you request. We do not sell this information, share it with advertisers, or use it to train AI models.</p>
-<h2>Service providers</h2><p>Online processing is routed through a Cloudflare Worker and forwarded to OpenAI's API for transcription and generation. Cloudflare and OpenAI process data only to provide these services. Under OpenAI's API data policy, API content is not used to train its models.</p>
-<h2>Live captions</h2><p>Live captions shown while you record are generated on your device using Apple's Speech framework. That live-caption text is not sent to our servers.</p>
-<h2>Device storage and iCloud</h2><p>Your recordings, transcripts, minutes, notes, folders, tags, bookmarks, and related meeting information are stored on your device. If iCloud is enabled, this data may sync through your personal iCloud account across supported Apple devices. TapMinutes does not have access to the content stored in your iCloud account. Apple's handling of iCloud data is governed by Apple's terms and privacy policy.</p>
-<h2>Retention</h2><p>Audio and transcripts sent for online processing are processed in real time and are not retained on our servers after the response is returned. Logs may contain anonymized usage counts, such as minutes used by a device per day, for rate limiting and abuse prevention. These logs may be retained for up to 30 days.</p>
-<h2>Your choices</h2><p>You can delete individual meetings in TapMinutes, disable iCloud access in Apple settings, or delete the app and its local data. Data already synced to iCloud may remain there until you remove it through your Apple Account or device settings. For privacy questions or deletion requests concerning our service, email <a href="mailto:support@tapminutes.app">support@tapminutes.app</a>.</p>
-<h2>Children</h2><p>TapMinutes is not directed to children under 13, and we do not knowingly collect personal information from children under 13.</p>
-<h2>Changes</h2><p>If this policy changes materially, we will update the date above. Continued use of TapMinutes after an update means the revised policy applies to your use.</p>
-</main><footer class="site-footer"><div class="wrap footer-inner"><span class="copyright">&copy; 2026 TapMinutes</span><a href="/">Home</a><a href="help.html">Help</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Terms of Service</a></div></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TapMinutes Privacy Policy</title>
+  <meta name="description" content="How TapMinutes handles recordings, transcripts, meeting information, iCloud sync, on-device transcription, and optional cloud processing.">
+  <link rel="canonical" href="https://tapminutes.app/privacy.html">
+  <link rel="icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="nav wrap" aria-label="Primary navigation"><a class="brand" href="/"><img src="assets/tapminutes-logo.png" alt=""><span>TapMinutes</span></a><button class="menu-button" aria-expanded="false" aria-controls="primary-links" aria-label="Open navigation">&#9776;</button><div class="nav-links" id="primary-links"><a href="index.html#features">Features</a><a href="index.html#plans">Free vs. Pro</a><a href="help.html">Help</a><a href="privacy.html">Privacy</a><a href="mailto:support@tapminutes.app">Support</a></div></nav></header>
+  <main class="legal" id="main">
+    <a class="back" href="/">&larr; Back to TapMinutes</a>
+    <h1>Privacy Policy</h1>
+    <span class="updated">Last updated: September 28, 2026</span>
+    <p>TapMinutes records meetings and turns recordings, supported imports, and transcripts into structured minutes and detailed notes. This policy explains what stays on your device, what may sync through your personal iCloud account, and what is processed when you choose cloud-powered features.</p>
+
+    <h2>Who we are</h2>
+    <p>TapMinutes is operated by Abraham Ochoa. Contact us at <a href="mailto:support@tapminutes.app">support@tapminutes.app</a>.</p>
+
+    <h2>Information stored on your device</h2>
+    <p>Recordings and meeting information are stored on your device. This can include audio, transcripts, minutes, notes, meeting titles, folders, tags, bookmarks, presets, and related settings.</p>
+    <p>When TapMinutes uses supported on-device transcription, audio processing for transcription stays on the device. Not every TapMinutes feature is on-device: premium cloud transcription and AI generation use cloud processing as described below.</p>
+
+    <h2>Personal iCloud synchronization</h2>
+    <p>If you enable iCloud for TapMinutes, meeting information may sync across supported Apple devices through your personal iCloud account. TapMinutes does not have direct access to content stored in your personal iCloud account. Apple's handling of iCloud data is governed by Apple's terms and privacy policy.</p>
+
+    <h2>Cloud transcription and AI generation</h2>
+    <p>Premium cloud transcription sends the audio needed to fulfill your transcription request. AI generation may send transcript text and the style instructions you selected to generate minutes, notes, or regenerated content. TapMinutes provides the required disclosure and consent before applicable cloud processing.</p>
+    <p>If an imported media file contains a meaningful embedded caption or transcript track and you choose to reuse it, TapMinutes can use that text instead of requesting a fresh audio transcription. If you choose audio transcription, the selected transcription route applies.</p>
+
+    <h2>Information processed for cloud requests</h2>
+    <p>Depending on the feature you choose, TapMinutes may process:</p>
+    <ul>
+      <li><strong>Necessary audio.</strong> Audio from a recording or supported imported media when premium cloud transcription is requested.</li>
+      <li><strong>Transcript text and instructions.</strong> Transcript text, an imported document or caption track, and selected style instructions when AI generation or regeneration is requested.</li>
+      <li><strong>Anonymous device identifier.</strong> A random identifier generated on your device to enforce usage limits and help prevent abuse. It is not linked to your name, email address, or Apple Account.</li>
+    </ul>
+    <p>TapMinutes does not collect your name, email address, contacts, location, health data, financial information, advertising identifiers, or analytics.</p>
+
+    <h2>Service providers</h2>
+    <p>Cloud requests go through the TapMinutes Cloudflare proxy and use OpenAI's API for transcription and generation. The API key is not embedded in the app. Cloudflare and OpenAI process the content needed to provide the requested service.</p>
+    <p>Under OpenAI's API data policy, content submitted through the API is not used to train OpenAI models.</p>
+
+    <h2>How information is used</h2>
+    <p>Audio, transcript text, imported text, and instructions are used to provide the transcription, minutes, notes, regeneration, and related features you request. We do not sell this information, share it with advertisers, or use it to train AI models.</p>
+
+    <h2>Retention</h2>
+    <p>Audio and text sent for cloud processing are processed to return the requested result and are not retained on TapMinutes servers after processing. Service-provider retention may be governed by the providers' applicable API terms and policies. Logs may contain anonymized usage counts, such as minutes or meetings used by a device, for rate limiting and abuse prevention. These logs may be retained for up to 30 days.</p>
+
+    <h2>Your choices</h2>
+    <p>You choose whether to enable iCloud and whether to use available cloud-powered features. You can delete individual meetings in TapMinutes, disable TapMinutes iCloud access in Apple settings, or delete the app and its local data. Content already synced to iCloud may remain there until you remove it through your Apple Account or device settings.</p>
+    <p>For privacy questions or deletion requests concerning the TapMinutes service, email <a href="mailto:support@tapminutes.app">support@tapminutes.app</a>.</p>
+
+    <h2>Children</h2>
+    <p>TapMinutes is not directed to children under 13, and we do not knowingly collect personal information from children under 13.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes materially, we will update the date above. Continued use of TapMinutes after an update means the revised policy applies to your use.</p>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><span class="copyright">&copy; 2026 TapMinutes</span><a href="/">Home</a><a href="help.html">Help</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard EULA</a><a href="mailto:support@tapminutes.app">Support</a></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
